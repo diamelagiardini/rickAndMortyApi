@@ -1,0 +1,19 @@
+{
+  "name": "rickandmortyapi",
+  "version": "1.0.0",
+  "description": "Primer proyecto utilizando API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diamelagiardini/rickAndMortyApi.git"
+  },
+  "author": "Diamela Giardini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diamelagiardini/rickAndMortyApi/issues"
+  },
+  "homepage": "https://github.com/diamelagiardini/rickAndMortyApi#readme"
+}
