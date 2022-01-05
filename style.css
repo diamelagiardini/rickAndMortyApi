@@ -1,0 +1,31 @@
+body {
+  background-color: #cccccc;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 100px 50px 100px;
+  border-radius: 40px;
+  background-color: #000000;
+}
+header div {
+  padding: 10px 30px 10px 30px;
+}
+header div img {
+  width: 300px;
+}
+header ul {
+  display: flex;
+  justify-content: space-between;
+}
+header ul li {
+  list-style: none;
+  color: #33FFC4;
+  font-size: 25px;
+  padding: 10px 30px 10px 30px;
+}
+
+/*# sourceMappingURL=style.css.map */

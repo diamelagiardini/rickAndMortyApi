@@ -1,0 +1,36 @@
+$color-fondo: #cccccc;
+$color-principal: #000000;
+$color-tipografia-principal: #33FFC4;
+$margen-principal: 50px 100px 50px 100px;
+$padding-header: 10px 30px 10px 30px;
+
+body {
+  background-color: $color-fondo;
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: $margen-principal;
+  border-radius: 40px;
+  background-color: $color-principal;
+  
+  div {
+    padding: $padding-header;
+    img {
+      width: 300px;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+    li {
+      list-style: none;
+      color: $color-tipografia-principal;
+      font-size: 25px;
+      padding: $padding-header;
+    }
+  }
+}

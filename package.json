@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/diamelagiardini/rickAndMortyApi/issues"
   },
-  "homepage": "https://github.com/diamelagiardini/rickAndMortyApi#readme"
+  "homepage": "https://github.com/diamelagiardini/rickAndMortyApi#readme",
+  "dependencies": {
+    "sass": "^1.45.2"
+  }
 }
