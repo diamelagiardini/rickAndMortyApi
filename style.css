@@ -10,6 +10,7 @@ header {
   margin: 50px 100px 50px 100px;
   border-radius: 40px;
   background-color: #000000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 header div {
   padding: 10px 30px 10px 30px;
@@ -23,9 +24,33 @@ header ul {
 }
 header ul li {
   list-style: none;
-  color: #33FFC4;
+  color: #33ffc4;
   font-size: 25px;
   padding: 10px 30px 10px 30px;
+}
+
+.div-portada {
+  margin: 50px 100px 50px 100px;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.div-portada img {
+  width: 100%;
+  border-radius: 40px;
+}
+
+footer {
+  margin: 50px 100px 50px 100px;
+  border-radius: 40px;
+  background-color: #000000;
+  color: #33ffc4;
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

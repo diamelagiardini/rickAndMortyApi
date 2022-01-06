@@ -1,12 +1,16 @@
 $color-fondo: #cccccc;
 $color-principal: #000000;
-$color-tipografia-principal: #33FFC4;
+$color-tipografia-principal: #33ffc4;
 $margen-principal: 50px 100px 50px 100px;
 $padding-header: 10px 30px 10px 30px;
 
+$box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
 body {
   background-color: $color-fondo;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
@@ -16,7 +20,8 @@ header {
   margin: $margen-principal;
   border-radius: 40px;
   background-color: $color-principal;
-  
+  box-shadow: $box-shadow;
+
   div {
     padding: $padding-header;
     img {
@@ -33,4 +38,28 @@ header {
       padding: $padding-header;
     }
   }
+}
+
+.div-portada {
+  margin: $margen-principal;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+  img {
+    width: 100%;
+    border-radius: 40px;
+  }
+}
+
+footer {
+  margin: $margen-principal;
+  border-radius: 40px;
+  background-color: $color-principal;
+  color: $color-tipografia-principal;
+  font-size: 20px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $box-shadow;
 }
