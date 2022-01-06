@@ -25,6 +25,14 @@ const esconderSeccion = (seccion) => {
   }
 };
 
+irAInicio.onclick = () => {
+    mostrarSeccion(seccionInicio)
+    esconderSeccion(seccionFija)
+    esconderSeccion(seccionPersonajes)
+    esconderSeccion(seccionUbicaciones)
+    esconderSeccion(seccionEpisodios)
+}
+
 irAPersonajes.onclick = () => {
     mostrarSeccion(seccionPersonajes)
     mostrarSeccion(seccionFija)
