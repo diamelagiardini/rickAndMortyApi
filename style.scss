@@ -1,6 +1,7 @@
 $color-fondo: #cccccc;
 $color-principal: #000000;
 $color-tipografia-principal: #33ffc4;
+$color-fondo-div: #222222;
 $margen-principal: 50px 100px 50px 100px;
 $padding-header: 10px 30px 10px 30px;
 $box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -9,6 +10,10 @@ $box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
 
 @mixin no-mostrar {
   display: none;
+}
+
+.no-mostrar{
+@include no-mostrar()
 }
 
 body {
@@ -94,6 +99,48 @@ header {
   }
 }
 
+/*-------------------------------------------
+              SECCION PERSONAJES
+---------------------------------------------*/
+#div-personajes{
+  background-color: $color-fondo-div;
+  height: 400px;
+  margin: $margen-principal;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+}
+
+/*-------------------------------------------
+              FIN SECCION PERSONAJES
+---------------------------------------------*/
+
+/*-------------------------------------------
+              SECCION UBICACIONEES
+---------------------------------------------*/
+#div-ubicaciones{
+  background-color: $color-fondo-div;
+  height: 400px;
+  margin: $margen-principal;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+}
+/*-------------------------------------------
+              FIN SECCION UBICACIONES
+---------------------------------------------*/
+
+/*-------------------------------------------
+              SECCION EPISODIOS
+---------------------------------------------*/
+#div-episodios{
+  background-color: $color-fondo-div;
+  height: 400px;
+  margin: $margen-principal;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+}
+/*-------------------------------------------
+              FIN SECCION EPISODIOS
+---------------------------------------------*/
 footer {
   margin: $margen-principal;
   border-radius: 40px;

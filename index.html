@@ -14,13 +14,13 @@
 
 <body>
     <header>
-        <div><img src="https://admiring-keller-046d5a.netlify.app/static/media/logo.9baa90dc.png"
+        <div id="ir-inicio"><img src="https://admiring-keller-046d5a.netlify.app/static/media/logo.9baa90dc.png"
                 alt="logo-rick-and-morty"></div>
         <div>
             <ul>
-                <li>PERSONAJES</li>
-                <li>UBICACIONES</li>
-                <li>EPISODIOS</li>
+                <li id="ir-personajes">PERSONAJES</li>
+                <li id="ir-ubicaciones">UBICACIONES</li>
+                <li id="ir-episodios">EPISODIOS</li>
             </ul>
         </div>
     </header>
@@ -36,20 +36,63 @@
                    FIN SECCION INICIO
     --------------------------------------------->
 
+    <!-------------------------------------------
+                SECCION FIJA PARA PERSONAJES,
+                UBICACIONES, EPISODIOS.
+    --------------------------------------------->
 
-    <div id="banner"><img src="/img/banner.png" alt=""></div>
+    <section id="seccion-fija" class="no-mostrar">
+        <div id="banner"><img src="/img/banner.png" alt=""></div>
 
-    <div id="buscador"> 
-        <p>INICIAR BUSQUEDA</p>
-        <input type="text" placeholder="Busca aca">
-        <img src="/img/logo-buscador.png" alt="">
-    </div>
+        <div id="buscador">
+            <p>INICIAR BUSQUEDA</p>
+            <input type="text" placeholder="Busca aca">
+            <img src="/img/logo-buscador.png" alt="">
+        </div>
+    </section>
 
+    <!-------------------------------------------
+                FIN SECCION FIJA PARA PERSONAJES,
+                UBICACIONES, EPISODIOS.
+    --------------------------------------------->
+
+    <!-------------------------------------------
+                   SECCION PERSONAJES
+    --------------------------------------------->
+    <section id="seccion-personajes" class="no-mostrar">
+        <div id="div-personajes"></div>
+    </section>
+    <!-------------------------------------------
+                  FIN SECCION PERSONAJES
+    --------------------------------------------->
+
+    <!-------------------------------------------
+                   SECCION UBICACIONES
+    --------------------------------------------->
+    <section id="seccion-ubicaciones" class="no-mostrar">
+        <div id="div-ubicaciones"></div>
+    </section>
+    <!-------------------------------------------
+                  FIN SECCION UBICACIONES
+    --------------------------------------------->
+
+
+    <!-------------------------------------------
+                   SECCION EPISODIOS
+    --------------------------------------------->
+    <section id="seccion-episodios" class="no-mostrar">
+        <div id="div-episodios"></div>
+    </section>
+    <!-------------------------------------------
+                  FIN SECCION EPISODIOS
+    --------------------------------------------->
 
     <footer>
         <p>TP Rick And Morty API, hecho con 💚 por Diame</p>
         <p>API rickandmortyapi.com</p>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
