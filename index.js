@@ -65,18 +65,18 @@ const crearTarjetasPersonajes = (data) => {
     return (
       acc +
       `             <article class="personaje">
-   <img src=${curr.image}>
+   <img class="imagen-personaje" src=${curr.image}>
    <h2 class="nombre-personaje">${curr.name}</h2>
    <div class="genero">
-       <p>GENERO</p>
+       <p class="subtitulos-personaje">GENERO</p>
        <p>${curr.gender}</p>
    </div>
    <div class="estado">
-       <p>ESTADO</p>
+       <p class="subtitulos-personaje">ESTADO</p>
        <p>${curr.status}</p>
    </div>
    <div class="origen">
-       <p>ORIGEN</p>
+       <p class="subtitulos-personaje">ORIGEN</p>
        <p>${curr.origin.name}</p>
    </div>
 </article>

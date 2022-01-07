@@ -12,8 +12,8 @@ $box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
   display: none;
 }
 
-.no-mostrar{
-@include no-mostrar()
+.no-mostrar {
+  @include no-mostrar();
 }
 
 body {
@@ -35,7 +35,7 @@ header {
     img {
       width: 300px;
     }
-    img:hover{
+    img:hover {
       cursor: pointer;
     }
   }
@@ -49,7 +49,7 @@ header {
       padding: $padding-header;
     }
 
-    li:hover{
+    li:hover {
       cursor: pointer;
       color: white;
     }
@@ -110,12 +110,11 @@ header {
 /*-------------------------------------------
               SECCION PERSONAJES
 ---------------------------------------------*/
-#div-personajes{
+#div-personajes {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
 
   background-color: $color-fondo-div;
   margin: $margen-principal;
@@ -131,19 +130,48 @@ header {
   border-radius: 20px;
 }
 
-.genero,.estado,.origen {
+.imagen-personaje {
+  border-radius: 150px;
+}
+
+.nombre-personaje {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitulos-personaje {
+  font-weight: 800;
+}
+
+.genero,
+.estado,
+.origen {
   display: flex;
   justify-content: space-between;
 }
 
-.paginacion { 
+.paginacion {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  button{
-    border-bottom: none;
-    margin: 10px;
+  background-color: $color-principal;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+  margin: $margen-principal;
+}
+button {
+  border-bottom: none;
+  border-style: none;
+  margin: 10px;
+  background-color: $color-principal;
+  color: $color-tipografia-principal;
+  i {
+    font-size: 40px;
+  }
+  i:hover {
+    cursor: pointer;
+    color: $color-fondo-div;
   }
 }
 
@@ -154,7 +182,7 @@ header {
 /*-------------------------------------------
               SECCION UBICACIONEES
 ---------------------------------------------*/
-#div-ubicaciones{
+#div-ubicaciones {
   background-color: $color-fondo-div;
   margin: $margen-principal;
   border-radius: 40px;
@@ -167,7 +195,7 @@ header {
 /*-------------------------------------------
               SECCION EPISODIOS
 ---------------------------------------------*/
-#div-episodios{
+#div-episodios {
   background-color: $color-fondo-div;
   margin: $margen-principal;
   border-radius: 40px;
