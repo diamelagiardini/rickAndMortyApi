@@ -26,33 +26,91 @@ const esconderSeccion = (seccion) => {
 };
 
 irAInicio.onclick = () => {
-    mostrarSeccion(seccionInicio)
-    esconderSeccion(seccionFija)
-    esconderSeccion(seccionPersonajes)
-    esconderSeccion(seccionUbicaciones)
-    esconderSeccion(seccionEpisodios)
-}
+  mostrarSeccion(seccionInicio);
+  esconderSeccion(seccionFija);
+  esconderSeccion(seccionPersonajes);
+  esconderSeccion(seccionUbicaciones);
+  esconderSeccion(seccionEpisodios);
+};
 
 irAPersonajes.onclick = () => {
-    mostrarSeccion(seccionPersonajes)
-    mostrarSeccion(seccionFija)
-    esconderSeccion(seccionUbicaciones)
-    esconderSeccion(seccionEpisodios)
-    esconderSeccion(seccionInicio)
-}
+  mostrarSeccion(seccionPersonajes);
+  mostrarSeccion(seccionFija);
+  esconderSeccion(seccionUbicaciones);
+  esconderSeccion(seccionEpisodios);
+  esconderSeccion(seccionInicio);
+};
 
 irAUbicaciones.onclick = () => {
-    mostrarSeccion(seccionUbicaciones)
-    mostrarSeccion(seccionFija)
-    esconderSeccion(seccionInicio)
-    esconderSeccion(seccionPersonajes)
-    esconderSeccion(seccionEpisodios)
-}
+  mostrarSeccion(seccionUbicaciones);
+  mostrarSeccion(seccionFija);
+  esconderSeccion(seccionInicio);
+  esconderSeccion(seccionPersonajes);
+  esconderSeccion(seccionEpisodios);
+};
 
 irAEpisodios.onclick = () => {
-    mostrarSeccion(seccionEpisodios)
-    mostrarSeccion(seccionFija)
-    esconderSeccion(seccionInicio)
-    esconderSeccion(seccionPersonajes)
-    esconderSeccion(seccionUbicaciones)
-}
+  mostrarSeccion(seccionEpisodios);
+  mostrarSeccion(seccionFija);
+  esconderSeccion(seccionInicio);
+  esconderSeccion(seccionPersonajes);
+  esconderSeccion(seccionUbicaciones);
+};
+
+// FUNCIONES
+
+const crearTarjetasPersonajes = (data) => {
+  const divPersonajes = document.querySelector("#div-personajes");
+  const html = data.reduce((acc, curr) => {
+    return (
+      acc +
+      `             <article class="personaje">
+   <img src=${curr.image}>
+   <h2 class="nombre-personaje">${curr.name}</h2>
+   <div class="genero">
+       <p>GENERO</p>
+       <p>${curr.gender}</p>
+   </div>
+   <div class="estado">
+       <p>ESTADO</p>
+       <p>${curr.status}</p>
+   </div>
+   <div class="origen">
+       <p>ORIGEN</p>
+       <p>${curr.origin.name}</p>
+   </div>
+</article>
+   `
+    );
+  }, " ");
+  divPersonajes.innerHTML = html;
+};
+
+let paginaActual = 1;
+
+const buscarInformacion = () => {
+  fetch(`https://rickandmortyapi.com/api/character/?page=${paginaActual}`)
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjetasPersonajes(data.results);
+    });
+};
+
+// TARJETAS PERSONAJES
+
+buscarInformacion();
+
+// PAGINACION
+
+const paginaAnterior = document.querySelector("#pagina-anterior-personajes");
+const paginaSiguiente = document.querySelector("#pagina-siguiente-personajes");
+
+paginaSiguiente.onclick = () => {
+  paginaActual = paginaActual + 1;
+  buscarInformacion();
+};
+
+paginaAnterior.onclick = () => {
+  paginaActual = paginaActual - 1;
+  buscarInformacion();
+};

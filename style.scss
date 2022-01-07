@@ -35,6 +35,9 @@ header {
     img {
       width: 300px;
     }
+    img:hover{
+      cursor: pointer;
+    }
   }
   ul {
     display: flex;
@@ -44,6 +47,11 @@ header {
       color: $color-tipografia-principal;
       font-size: 25px;
       padding: $padding-header;
+    }
+
+    li:hover{
+      cursor: pointer;
+      color: white;
     }
   }
 }
@@ -76,7 +84,7 @@ header {
   }
 }
 
-#buscador {
+.buscador {
   margin: $margen-principal;
   border-radius: 40px;
   box-shadow: $box-shadow;
@@ -103,11 +111,40 @@ header {
               SECCION PERSONAJES
 ---------------------------------------------*/
 #div-personajes{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+
   background-color: $color-fondo-div;
-  height: 400px;
   margin: $margen-principal;
   border-radius: 40px;
   box-shadow: $box-shadow;
+}
+
+.personaje {
+  margin: 20px;
+  padding: 15px;
+  background-color: whitesmoke;
+  color: #222222;
+  border-radius: 20px;
+}
+
+.genero,.estado,.origen {
+  display: flex;
+  justify-content: space-between;
+}
+
+.paginacion { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  button{
+    border-bottom: none;
+    margin: 10px;
+  }
 }
 
 /*-------------------------------------------
@@ -119,7 +156,6 @@ header {
 ---------------------------------------------*/
 #div-ubicaciones{
   background-color: $color-fondo-div;
-  height: 400px;
   margin: $margen-principal;
   border-radius: 40px;
   box-shadow: $box-shadow;
@@ -133,7 +169,6 @@ header {
 ---------------------------------------------*/
 #div-episodios{
   background-color: $color-fondo-div;
-  height: 400px;
   margin: $margen-principal;
   border-radius: 40px;
   box-shadow: $box-shadow;
