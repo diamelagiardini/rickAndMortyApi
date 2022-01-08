@@ -11,9 +11,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #000000;
   margin: 50px 100px 50px 100px;
   border-radius: 40px;
-  background-color: #000000;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 header div {
@@ -79,8 +79,13 @@ header ul li:hover {
 .buscador p,
 .buscador input,
 .buscador img {
-  padding: 15px;
+  margin: 8px;
+  padding: 5px;
   font-size: 25px;
+}
+
+.logo-banner {
+  width: 50px;
 }
 
 /*-------------------------------------------
@@ -162,6 +167,40 @@ button i:hover {
   margin: 50px 100px 50px 100px;
   border-radius: 40px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ubicacion {
+  margin: 20px;
+  padding: 15px;
+  background-color: whitesmoke;
+  color: #222222;
+  border-radius: 20px;
+}
+
+.imagen-ubicacion {
+  width: 300px;
+  height: 300px;
+}
+
+.nombre-origen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipo,
+.dimension,
+.residentes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitulos-ubicacion {
+  font-weight: 800;
 }
 
 /*-------------------------------------------
