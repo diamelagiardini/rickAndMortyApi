@@ -11,13 +11,22 @@ const seccionPersonajes = document.querySelector("#seccion-personajes");
 const seccionUbicaciones = document.querySelector("#seccion-ubicaciones");
 const seccionEpisodios = document.querySelector("#seccion-episodios");
 
-//PAGINACION 
+//PAGINACION
 
 const paginaAnterior = document.querySelector("#pagina-anterior-personajes");
 const paginaSiguiente = document.querySelector("#pagina-siguiente-personajes");
-
-const paginaAnteriorUbicaciones = document.querySelector("#pagina-anterior-ubicaciones");
-const paginaSiguienteUbicaciones = document.querySelector("#pagina-siguiente-ubicaciones");
+const paginaAnteriorUbicaciones = document.querySelector(
+  "#pagina-anterior-ubicaciones"
+);
+const paginaSiguienteUbicaciones = document.querySelector(
+  "#pagina-siguiente-ubicaciones"
+);
+const paginaSiguienteEpisodios = document.querySelector(
+  "#pagina-siguiente-episodios"
+);
+const paginaAnteriorEpisodios = document.querySelector(
+  "#pagina-anterior-episodios"
+);
 
 // FUNCIONES
 
@@ -72,7 +81,6 @@ const buscarInformacionPersonajes = () => {
     });
 };
 
-
 const crearTarjetasUbicaciones = (data) => {
   const divUbicaciones = document.querySelector("#div-ubicaciones");
   const html = data.reduce((acc, curr) => {
@@ -103,12 +111,53 @@ const crearTarjetasUbicaciones = (data) => {
 let paginaActualUbicaciones = 1;
 
 const buscarInformacionUbicaciones = () => {
-  fetch(`https://rickandmortyapi.com/api/location/?page=${paginaActualUbicaciones}`)
-  .then((res) => res.json())
-  .then((data) => {
-    crearTarjetasUbicaciones(data.results);
-  });
-}
+  fetch(
+    `https://rickandmortyapi.com/api/location/?page=${paginaActualUbicaciones}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjetasUbicaciones(data.results);
+    });
+};
+
+const crearTarjetasEpisodios = (data) => {
+  const divEpisodios = document.querySelector("#div-episodios");
+  const html = data.reduce((acc, curr) => {
+    return (
+      acc +
+      `             <article class="episodio">
+   <img class="imagen-episodio" src="https://blog.personal.com.py/wp-content/uploads/2020/09/los-3-mejores-episodios-de-Rick-y-Morty.jpg">
+   <h2 class="nombre-episodio">${curr.name}</h2>
+   <div class="id">
+       <p class="subtitulos-episodio">ID</p>
+       <p>${curr.id}</p>
+   </div>
+   <div class="air-date">
+       <p class="subtitulos-episodio">AIR DATE</p>
+       <p>${curr.air_date}</p>
+   </div>
+   <div class="episode">
+       <p class="subtitulos-episodio">EPISODE</p>
+       <p>${curr.episode}</p>
+   </div>
+</article>
+   `
+    );
+  }, " ");
+  divEpisodios.innerHTML = html;
+};
+
+let paginaActualEpisodios = 1;
+
+const buscarInformacionEpisodios = () => {
+  fetch(
+    `https://rickandmortyapi.com/api/episode/?page=${paginaActualEpisodios}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjetasEpisodios(data.results);
+    });
+};
 
 //CAMBIAR SECCIONES
 irAInicio.onclick = () => {
@@ -143,8 +192,6 @@ irAEpisodios.onclick = () => {
   esconderSeccion(seccionUbicaciones);
 };
 
-
-
 // TARJETAS PERSONAJES
 
 buscarInformacionPersonajes();
@@ -161,10 +208,8 @@ paginaAnterior.onclick = () => {
   buscarInformacionPersonajes();
 };
 
-
-
 // TARJETAS UBICACIONES
-buscarInformacionUbicaciones()
+buscarInformacionUbicaciones();
 
 // PAGINACION UBICACIONES
 
@@ -176,4 +221,20 @@ paginaSiguienteUbicaciones.onclick = () => {
 paginaAnteriorUbicaciones.onclick = () => {
   paginaActualUbicaciones = paginaActualUbicaciones - 1;
   buscarInformacionUbicaciones();
+};
+
+// TARJETAS EPISODIOS
+
+buscarInformacionEpisodios();
+
+//PAGINACION EPISODIOS
+
+paginaSiguienteEpisodios.onclick = () => {
+  paginaActualEpisodios = paginaActualEpisodios + 1;
+  buscarInformacionEpisodios();
+};
+
+paginaAnteriorEpisodios.onclick = () => {
+  paginaActualEpisodios = paginaActualEpisodios - 1;
+  buscarInformacionEpisodios();
 };

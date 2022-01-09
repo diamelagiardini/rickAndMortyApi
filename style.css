@@ -131,31 +131,6 @@ header ul li:hover {
   justify-content: space-between;
 }
 
-.paginacion {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 50px 100px 50px 100px;
-  border-radius: 40px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  background-color: #000000;
-}
-
-button {
-  border-bottom: none;
-  border-style: none;
-  margin: 10px;
-  background-color: #000000;
-  color: #33ffc4;
-}
-button i {
-  font-size: 40px;
-}
-button i:hover {
-  cursor: pointer;
-  color: #222222;
-}
-
 /*-------------------------------------------
               FIN SECCION PERSONAJES
 ---------------------------------------------*/
@@ -214,11 +189,70 @@ button i:hover {
   margin: 50px 100px 50px 100px;
   border-radius: 40px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.episodio {
+  margin: 20px;
+  padding: 15px;
+  background-color: whitesmoke;
+  color: #222222;
+  border-radius: 20px;
+}
+
+.imagen-episodio {
+  width: 300px;
+  height: 300px;
+}
+
+.nombre-episodio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.id,
+.air-date,
+.episode {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtitulos-episodio {
+  font-weight: 800;
 }
 
 /*-------------------------------------------
               FIN SECCION EPISODIOS
 ---------------------------------------------*/
+.paginacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 100px 50px 100px;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: #000000;
+}
+
+button {
+  border-bottom: none;
+  border-style: none;
+  margin: 10px;
+  background-color: #000000;
+  color: #33ffc4;
+}
+button i {
+  font-size: 40px;
+}
+button i:hover {
+  cursor: pointer;
+  color: #222222;
+}
+
 footer {
   margin: 50px 100px 50px 100px;
   border-radius: 40px;
