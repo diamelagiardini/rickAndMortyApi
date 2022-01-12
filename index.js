@@ -43,9 +43,9 @@ const esconderSeccion = (seccion) => {
     return seccion.classList.add("no-mostrar");
   }
 };
+const divPersonajes = document.querySelector("#div-personajes");
 
 const crearTarjetasPersonajes = (data) => {
-  const divPersonajes = document.querySelector("#div-personajes");
   const html = data.reduce((acc, curr) => {
     return (
       acc +
@@ -159,6 +159,47 @@ const buscarInformacionEpisodios = () => {
     });
 };
 
+const crearTarjetasSegunPersonaje = (data) => {
+  divPersonajes.classList.add("no-mostrar");
+  const divSegunPersonaje = document.querySelector("#div-segun-personajes");
+  divSegunPersonaje.classList.remove("no-mostrar");
+  const html = data.reduce((acc, curr) => {
+    return (
+      acc +
+      `<article class="personaje">
+      <img class="imagen-personaje" src=${curr.image}>
+      <h2 class="nombre-personaje">${curr.name}</h2>
+      <div class="genero">
+          <p class="subtitulos-personaje">GENERO</p>
+          <p>${curr.gender}</p>
+      </div>
+      <div class="estado">
+          <p class="subtitulos-personaje">ESTADO</p>
+          <p>${curr.status}</p>
+      </div>
+      <div class="origen">
+          <p class="subtitulos-personaje">ORIGEN</p>
+          <p>${curr.origin.name}</p>
+      </div>
+   </article>`
+    );
+  }, " ");
+  divSegunPersonaje.innerHTML = html;
+};
+
+const inputPersonaje = document.querySelector("#input-personaje");
+
+const buscarInformacionSegunPersonaje = () => {
+  const valorInputPersonaje = inputPersonaje.value.toLowerCase();
+  fetch(
+    `https://rickandmortyapi.com/api/character/?name=${valorInputPersonaje}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjetasSegunPersonaje(data.results);
+    });
+};
+
 //CAMBIAR SECCIONES
 irAInicio.onclick = () => {
   mostrarSeccion(seccionInicio);
@@ -237,4 +278,13 @@ paginaSiguienteEpisodios.onclick = () => {
 paginaAnteriorEpisodios.onclick = () => {
   paginaActualEpisodios = paginaActualEpisodios - 1;
   buscarInformacionEpisodios();
+};
+
+// BUSCAR SEGUN PERSONAJE
+
+const botonBuscarPersonaje = document.querySelector("#boton-buscar-personaje");
+
+botonBuscarPersonaje.onclick = () => {
+  buscarInformacionSegunPersonaje();
+  console.log("HOLA");
 };
