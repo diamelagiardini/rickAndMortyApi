@@ -184,7 +184,7 @@ header ul li:hover {
 /*-------------------------------------------
               SECCION EPISODIOS
 ---------------------------------------------*/
-#div-episodios {
+.div-episodios {
   background-color: #222222;
   margin: 50px 100px 50px 100px;
   border-radius: 40px;

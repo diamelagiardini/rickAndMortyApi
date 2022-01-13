@@ -118,9 +118,9 @@ const buscarInformacionUbicaciones = () => {
       crearTarjetasUbicaciones(data.results);
     });
 };
-
+const divEpisodios = document.querySelector("#div-episodios");
 const crearTarjetasEpisodios = (data) => {
-  const divEpisodios = document.querySelector("#div-episodios");
+  
   const html = data.reduce((acc, curr) => {
     return (
       acc +
@@ -238,6 +238,49 @@ const buscarInformacionSegunUbicacion = () => {
     });
 };
 
+const crearTarjetasSegunEpisodio = (data) => {
+  
+  const divSegunEpisodio = document.querySelector("#div-segun-episodios");
+  divSegunEpisodio.classList.remove("no-mostrar");
+  divSegunEpisodio.classList.add("div-episodios")
+  const html = data.reduce((acc, curr) => {
+    return (
+      acc +
+      `<article class="episodio">
+   <img class="imagen-episodio" src="https://blog.personal.com.py/wp-content/uploads/2020/09/los-3-mejores-episodios-de-Rick-y-Morty.jpg">
+   <h2 class="nombre-episodio">${curr.name}</h2>
+   <div class="id">
+       <p class="subtitulos-episodio">ID</p>
+       <p>${curr.id}</p>
+   </div>
+   <div class="air-date">
+       <p class="subtitulos-episodio">AIR DATE</p>
+       <p>${curr.air_date}</p>
+   </div>
+   <div class="episode">
+       <p class="subtitulos-episodio">EPISODE</p>
+       <p>${curr.episode}</p>
+   </div>
+</article>`
+    );
+  }, " ");
+  divSegunEpisodio.innerHTML = html;
+};
+
+const inputEpisodio = document.querySelector("#input-episodio");
+
+const buscarInformacionSegunEpisodio = () => {
+  const valorInputEpisodio = inputEpisodio.value.toLowerCase();
+  fetch(
+    `https://rickandmortyapi.com/api/episode/?name=${valorInputEpisodio}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjetasSegunEpisodio(data.results);
+    });
+};
+
+
 //CAMBIAR SECCIONES
 irAInicio.onclick = () => {
   mostrarSeccion(seccionInicio);
@@ -337,3 +380,14 @@ botonBuscarUbicacion.onclick = () => {
   divUbicaciones.classList.remove("div-ubicaciones");
   buscarInformacionSegunUbicacion();
 };
+
+// BUSCAR SEGUN NOMBRE DE EPISODIO
+
+const botonBuscarEpisodio = document.querySelector("#boton-buscar-episodio");
+
+botonBuscarEpisodio.onclick = () => {
+  divEpisodios.classList.add("no-mostrar");
+  divEpisodios.classList.remove("div-episodios");
+  buscarInformacionSegunEpisodio();
+};
+

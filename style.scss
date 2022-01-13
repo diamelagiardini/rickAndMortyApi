@@ -206,7 +206,7 @@ header {
 /*-------------------------------------------
               SECCION EPISODIOS
 ---------------------------------------------*/
-#div-episodios {
+.div-episodios {
   background-color: $color-fondo-div;
   @include estilo-principal;
   @include centrado;
