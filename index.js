@@ -80,9 +80,8 @@ const buscarInformacionPersonajes = () => {
       crearTarjetasPersonajes(data.results);
     });
 };
-
+const divUbicaciones = document.querySelector("#div-ubicaciones");
 const crearTarjetasUbicaciones = (data) => {
-  const divUbicaciones = document.querySelector("#div-ubicaciones");
   const html = data.reduce((acc, curr) => {
     return (
       acc +
@@ -160,9 +159,9 @@ const buscarInformacionEpisodios = () => {
 };
 
 const crearTarjetasSegunPersonaje = (data) => {
-  divPersonajes.classList.add("no-mostrar");
   const divSegunPersonaje = document.querySelector("#div-segun-personajes");
   divSegunPersonaje.classList.remove("no-mostrar");
+  divSegunPersonaje.classList.add("div-personajes");
   const html = data.reduce((acc, curr) => {
     return (
       acc +
@@ -197,6 +196,45 @@ const buscarInformacionSegunPersonaje = () => {
     .then((res) => res.json())
     .then((data) => {
       crearTarjetasSegunPersonaje(data.results);
+    });
+};
+
+const crearTarjetasSegunUbicacion = (data) => {
+  const divSegunUbicacion = document.querySelector("#div-segun-ubicaciones");
+  divSegunUbicacion.classList.remove("no-mostrar");
+  divSegunUbicacion.classList.add("div-ubicaciones");
+  const html = data.reduce((acc, curr) => {
+    return (
+      acc +
+      `             <article class="ubicacion">
+   <img class="imagen-ubicacion" src="https://admiring-keller-046d5a.netlify.app/static/media/01.f47ff45c.png">
+   <h2 class="nombre-origen">${curr.name}</h2>
+   <div class="tipo">
+       <p class="subtitulos-ubicacion">TIPO</p>
+       <p>${curr.type}</p>
+   </div>
+   <div class="dimension">
+       <p class="subtitulos-ubicacion">DIMENSION</p>
+       <p>${curr.dimension}</p>
+   </div>
+   <div class="residentes">
+       <p class="subtitulos-ubicacion">RESIDENTES</p>
+       <p>${curr.residents.length}</p>
+   </div>
+</article>`
+    );
+  }, " ");
+  divSegunUbicacion.innerHTML = html;
+};
+
+const inputUbicacion = document.querySelector("#input-ubicacion");
+
+const buscarInformacionSegunUbicacion = () => {
+  const valorInputUbicacion = inputUbicacion.value.toLowerCase();
+  fetch(`https://rickandmortyapi.com/api/location/?type=${valorInputUbicacion}`)
+    .then((res) => res.json())
+    .then((data) => {
+      crearTarjetasSegunUbicacion(data.results);
     });
 };
 
@@ -285,6 +323,17 @@ paginaAnteriorEpisodios.onclick = () => {
 const botonBuscarPersonaje = document.querySelector("#boton-buscar-personaje");
 
 botonBuscarPersonaje.onclick = () => {
+  divPersonajes.classList.add("no-mostrar");
+  divPersonajes.classList.remove("div-personajes");
   buscarInformacionSegunPersonaje();
-  console.log("HOLA");
+};
+
+// BUSCAR SEGUN TIPO DE UBICACION
+
+const botonBuscarUbicacion = document.querySelector("#boton-buscar-ubicacion");
+
+botonBuscarUbicacion.onclick = () => {
+  divUbicaciones.classList.add("no-mostrar");
+  divUbicaciones.classList.remove("div-ubicaciones");
+  buscarInformacionSegunUbicacion();
 };
