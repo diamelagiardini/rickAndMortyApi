@@ -120,7 +120,6 @@ const buscarInformacionUbicaciones = () => {
 };
 const divEpisodios = document.querySelector("#div-episodios");
 const crearTarjetasEpisodios = (data) => {
-  
   const html = data.reduce((acc, curr) => {
     return (
       acc +
@@ -239,10 +238,9 @@ const buscarInformacionSegunUbicacion = () => {
 };
 
 const crearTarjetasSegunEpisodio = (data) => {
-  
   const divSegunEpisodio = document.querySelector("#div-segun-episodios");
   divSegunEpisodio.classList.remove("no-mostrar");
-  divSegunEpisodio.classList.add("div-episodios")
+  divSegunEpisodio.classList.add("div-episodios");
   const html = data.reduce((acc, curr) => {
     return (
       acc +
@@ -271,15 +269,12 @@ const inputEpisodio = document.querySelector("#input-episodio");
 
 const buscarInformacionSegunEpisodio = () => {
   const valorInputEpisodio = inputEpisodio.value.toLowerCase();
-  fetch(
-    `https://rickandmortyapi.com/api/episode/?name=${valorInputEpisodio}`
-  )
+  fetch(`https://rickandmortyapi.com/api/episode/?name=${valorInputEpisodio}`)
     .then((res) => res.json())
     .then((data) => {
       crearTarjetasSegunEpisodio(data.results);
     });
 };
-
 
 //CAMBIAR SECCIONES
 irAInicio.onclick = () => {
@@ -390,4 +385,3 @@ botonBuscarEpisodio.onclick = () => {
   divEpisodios.classList.remove("div-episodios");
   buscarInformacionSegunEpisodio();
 };
-

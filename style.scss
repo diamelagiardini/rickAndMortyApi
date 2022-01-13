@@ -51,6 +51,25 @@ $negrita-subtitulos-tarjetas: 800;
   height: 300px;
 }
 
+@mixin estilo-boton {
+  cursor: pointer;
+  border: 1px solid $color-tipografia-principal;
+  border-radius: 15px;
+  padding: 8px;
+  color: #33ffc4;
+  background-color: $color-principal;
+}
+
+@mixin hoover {
+  cursor: pointer;
+  border: 1px solid $color-principal;
+  border-radius: 15px;
+  padding: 8px;
+  color: $color-principal;
+  background-color: $color-tipografia-principal;
+}
+
+
 body {
   background-color: $color-fondo;
   font-family: "Roboto", sans-serif;
@@ -76,15 +95,19 @@ header {
     display: flex;
     justify-content: space-between;
     li {
-      list-style: none;
+     /* 
       color: $color-tipografia-principal;
-      font-size: 25px;
-      padding: $padding-header;
+      
+      padding: $padding-header;*/
+      @include estilo-boton;
+      list-style: none;
+      margin: 0 10px 0 10px;
     }
 
     li:hover {
-      cursor: pointer;
-      color: white;
+     /* cursor: pointer;
+      color: white;*/
+      @include hoover;
     }
   }
 }
@@ -126,6 +149,17 @@ header {
     font-size: 25px;
   }
 }
+
+.buscador-boton {
+  @include estilo-boton;
+}
+
+
+
+.buscador-boton:hover{
+  @include hoover;
+}
+
 
 .logo-banner {
   width: 50px;
@@ -244,7 +278,7 @@ header {
   background-color: $color-principal;
 }
 
-button {
+.paginacion-boton {
   border-bottom: none;
   border-style: none;
   margin: 10px;

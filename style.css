@@ -30,14 +30,28 @@ header ul {
   justify-content: space-between;
 }
 header ul li {
-  list-style: none;
+  /* 
+   color: $color-tipografia-principal;
+
+   padding: $padding-header;*/
+  cursor: pointer;
+  border: 1px solid #33ffc4;
+  border-radius: 15px;
+  padding: 8px;
   color: #33ffc4;
-  font-size: 25px;
-  padding: 10px 30px 10px 30px;
+  background-color: #000000;
+  list-style: none;
+  margin: 0 10px 0 10px;
 }
 header ul li:hover {
+  /* cursor: pointer;
+   color: white;*/
   cursor: pointer;
-  color: white;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  padding: 8px;
+  color: #000000;
+  background-color: #33ffc4;
 }
 
 /*-------------------------------------------
@@ -82,6 +96,24 @@ header ul li:hover {
   margin: 8px;
   padding: 5px;
   font-size: 25px;
+}
+
+.buscador-boton {
+  cursor: pointer;
+  border: 1px solid #33ffc4;
+  border-radius: 15px;
+  padding: 8px;
+  color: #33ffc4;
+  background-color: #000000;
+}
+
+.buscador-boton:hover {
+  cursor: pointer;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  padding: 8px;
+  color: #000000;
+  background-color: #33ffc4;
 }
 
 .logo-banner {
@@ -238,17 +270,17 @@ header ul li:hover {
   background-color: #000000;
 }
 
-button {
+.paginacion-boton {
   border-bottom: none;
   border-style: none;
   margin: 10px;
   background-color: #000000;
   color: #33ffc4;
 }
-button i {
+.paginacion-boton i {
   font-size: 40px;
 }
-button i:hover {
+.paginacion-boton i:hover {
   cursor: pointer;
   color: #222222;
 }
