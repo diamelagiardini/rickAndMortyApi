@@ -1,12 +1,10 @@
 $color-fondo: #cccccc;
 $color-principal: #000000;
-$color-tipografia-principal: #33ffc4;
-$color-fondo-div: #222222;
+$color-tipografia-principal: rgb(51, 255, 196);
+$color-fondo-div: rgb(34, 34, 34);
 $margen-principal: 50px 100px 50px 100px;
 $padding-header: 10px 30px 10px 30px;
-$box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-  rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-  rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+$box-shadow: rgb(34, 34, 34) 0px 5px 30px 0px;
 $negrita-subtitulos-tarjetas: 800;
 @mixin no-mostrar {
   display: none;
@@ -69,7 +67,6 @@ $negrita-subtitulos-tarjetas: 800;
   background-color: $color-tipografia-principal;
 }
 
-
 body {
   background-color: $color-fondo;
   font-family: "Roboto", sans-serif;
@@ -95,7 +92,7 @@ header {
     display: flex;
     justify-content: space-between;
     li {
-     /* 
+      /* 
       color: $color-tipografia-principal;
       
       padding: $padding-header;*/
@@ -105,7 +102,7 @@ header {
     }
 
     li:hover {
-     /* cursor: pointer;
+      /* cursor: pointer;
       color: white;*/
       @include hoover;
     }
@@ -128,10 +125,11 @@ header {
               FIN SECCION INICIO
 ---------------------------------------------*/
 
-#banner {
+.banner {
   @include estilo-principal;
   img {
     width: 100%;
+    height: 250px;
     border-radius: 40px;
   }
 }
@@ -146,7 +144,7 @@ header {
   img {
     margin: 8px;
     padding: 5px;
-    font-size: 25px;
+   // font-size: 25px;
   }
 }
 
@@ -154,12 +152,9 @@ header {
   @include estilo-boton;
 }
 
-
-
-.buscador-boton:hover{
+.buscador-boton:hover {
   @include hoover;
 }
-
 
 .logo-banner {
   width: 50px;
