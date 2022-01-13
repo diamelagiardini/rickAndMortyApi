@@ -24,6 +24,7 @@ $negrita-subtitulos-tarjetas: 800;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 @mixin espaciado-buscador {
@@ -37,6 +38,7 @@ $negrita-subtitulos-tarjetas: 800;
   background-color: whitesmoke;
   color: #222222;
   border-radius: 20px;
+  text-align: center;
 }
 
 @mixin espaciado-subtitulos-tarjetas {
@@ -68,6 +70,8 @@ $negrita-subtitulos-tarjetas: 800;
 }
 
 body {
+  box-sizing: border-box;
+  margin: 0;
   background-color: $color-fondo;
   font-family: "Roboto", sans-serif;
 }
@@ -129,7 +133,8 @@ header {
   @include estilo-principal;
   img {
     width: 100%;
-    height: 250px;
+    max-height: 100%;
+    height: auto;
     border-radius: 40px;
   }
 }
@@ -144,7 +149,6 @@ header {
   img {
     margin: 8px;
     padding: 5px;
-   // font-size: 25px;
   }
 }
 
@@ -293,7 +297,96 @@ footer {
   @include centrado;
   background-color: $color-principal;
   color: $color-tipografia-principal;
-  font-size: 20px;
+  //font-size: 20px;
   font-weight: 800;
   flex-direction: column;
+}
+
+@mixin margen-0 {
+  margin: 0;
+  border-radius: 0;
+}
+
+@media (max-width: 1050px) {
+  body {
+    background-color: $color-principal;
+  }
+  header,
+  .div-portada,
+  .div-personajes,
+  .div-ubicaciones,
+  .div-episodios,
+  .banner,
+  .buscador,
+  .paginacion,
+  footer {
+    @include margen-0;
+  }
+  .div-portada {
+    img {
+      border-radius: 0px;
+    }
+  }
+  .banner {
+    img {
+      border-radius: 0px;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  header {
+    @include centrado;
+    flex-direction: column;
+    padding: 5px;
+  }
+  footer {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 750px) {
+  .personaje,
+  .ubicacion,
+  .espisodio {
+    max-width: 150px;
+    height: 300px;
+    font-size: 12px;
+    img {
+      width: 160px;
+      height: 150px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .div-navegacion {
+    ul {
+      @include centrado;
+      flex-direction: column;
+    }
+  }
+  .div-navegacion {
+    ul {
+      li {
+        width: 100px;
+        @include centrado;
+        margin: 5px 0 5px 0;
+      }
+    }
+  }
+
+  .buscador {
+    padding: 5px;
+    font-size: 10px;
+    margin: 0;
+  }
+
+  .buscador-boton {
+    margin-right: 10px;
+  }
+
+  .logo-banner {
+    @include no-mostrar;
+  }
 }
