@@ -354,12 +354,16 @@ footer {
   }
 }
 @media (max-width: 750px) {
-  .personaje, .ubicacion, .espisodio {
+  .personaje,
+.ubicacion,
+.espisodio {
     max-width: 150px;
     height: 300px;
     font-size: 12px;
   }
-  .personaje img, .ubicacion img, .espisodio img {
+  .personaje img,
+.ubicacion img,
+.espisodio img {
     width: 160px;
     height: 150px;
   }
@@ -373,6 +377,10 @@ footer {
     flex-direction: column;
   }
 
+  .div-navegacion ul {
+    margin: 0;
+    padding: 0;
+  }
   .div-navegacion ul li {
     width: 100px;
     display: flex;

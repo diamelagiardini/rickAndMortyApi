@@ -368,6 +368,8 @@ footer {
   }
   .div-navegacion {
     ul {
+      margin: 0;
+      padding: 0;
       li {
         width: 100px;
         @include centrado;
