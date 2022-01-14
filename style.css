@@ -102,6 +102,10 @@ header ul li:hover {
   padding: 5px;
 }
 
+.buscador input {
+  background-color: #cccccc;
+}
+
 .buscador-boton {
   cursor: pointer;
   border: 1px solid #33ffc4;

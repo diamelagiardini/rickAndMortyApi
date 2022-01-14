@@ -152,6 +152,12 @@ header {
   }
 }
 
+.buscador {
+  input{
+    background-color: #cccccc;
+  }
+}
+
 .buscador-boton {
   @include estilo-boton;
 }
@@ -332,6 +338,7 @@ footer {
       border-radius: 0px;
     }
   }
+
 }
 
 @media (max-width: 830px) {
