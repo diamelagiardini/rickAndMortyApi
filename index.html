@@ -64,6 +64,44 @@
             <button id="boton-buscar-personaje" class="buscador-boton">BUSCAR</button>
             <img class="logo-banner" src="/img/logo-buscador.png" alt="">
         </div>
+
+
+        <!--FILTRO PERSONAJES-->
+
+        <div id="filtro-personajes" class="filtros">
+            <div class="sub-div-filtros">
+                <div id="filtro-personajes-titulo" class="filtro-titulo">
+                    <h2>FILTROS</h2>
+                </div>
+                <div id="filtro-personajes-categorias" class="filtro-categorias">
+                    <select name="genero" id="filtro-genero">
+                        <option value="Todos">Genero</option>
+                        <option value="Male">Masculino</option>
+                        <option value="Female">Femenino</option>
+                        <option value="Genderless">Genderless</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                    <select name="estado" id="filtro-estado">
+                        <option value="Todos">Estado</option>
+                        <option value="Alive">Vivo</option>
+                        <option value="Dead">Fallecido</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+            <div class="sub-div-filtros">
+                <div id="ordenar-personajes-titulo" class="filtro-titulo">
+                    <h2>ORDENAR</h2>
+                </div>
+                <div class="filtro-categorias">
+                    <select name="ordenar" id="ordenar-personajes-az-za">
+                        <option value="az">A/Z</option>
+                        <option value="za">Z/A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
         <div id="div-personajes" class="div-personajes">
 
         </div>
@@ -91,9 +129,21 @@
     <section id="seccion-ubicaciones" class="no-mostrar">
         <div class="buscador">
             <p>INICIAR BUSQUEDA</p>
-            <input id="input-ubicacion" type="text" placeholder="Buscar tipo de ubicacion">
+            <input id="input-ubicacion" type="text" placeholder="Buscar ubicacion">
             <button id="boton-buscar-ubicacion" class="buscador-boton">BUSCAR</button>
             <img class="logo-banner" src="/img/logo-buscador.png" alt="">
+        </div>
+
+        <div class="ordenar">
+            <div id="ordenar-ubicaciones-titulo" class="filtro-titulo">
+                <h2>ORDENAR</h2>
+            </div>
+            <div class="filtro-categorias">
+                <select name="ordenar" id="ordenar-ubicaciones-az-za">
+                    <option value="az">A/Z</option>
+                    <option value="za">Z/A</option>
+                </select>
+            </div>
         </div>
 
         <div id="div-ubicaciones" class="div-ubicaciones">
@@ -127,6 +177,18 @@
             <input id="input-episodio" type="text" placeholder="Buscar episodio">
             <button id="boton-buscar-episodio" class="buscador-boton">BUSCAR</button>
             <img class="logo-banner" src="/img/logo-buscador.png" alt="">
+        </div>
+
+        <div class="ordenar">
+            <div id="ordenar-episodios-titulo" class="filtro-titulo">
+                <h2>ORDENAR</h2>
+            </div>
+            <div class="filtro-categorias">
+                <select name="ordenar" id="ordenar-episodios-az-za">
+                    <option value="az">A/Z</option>
+                    <option value="za">Z/A</option>
+                </select>
+            </div>
         </div>
 
         <div id="div-episodios" class="div-episodios">

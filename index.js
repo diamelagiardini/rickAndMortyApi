@@ -230,7 +230,7 @@ const inputUbicacion = document.querySelector("#input-ubicacion");
 
 const buscarInformacionSegunUbicacion = () => {
   const valorInputUbicacion = inputUbicacion.value.toLowerCase();
-  fetch(`https://rickandmortyapi.com/api/location/?type=${valorInputUbicacion}`)
+  fetch(`https://rickandmortyapi.com/api/location/?name=${valorInputUbicacion}`)
     .then((res) => res.json())
     .then((data) => {
       crearTarjetasSegunUbicacion(data.results);

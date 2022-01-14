@@ -14,7 +14,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #000000;
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
 }
@@ -60,7 +60,7 @@ header ul li:hover {
               SECCION INICIO
 ---------------------------------------------*/
 .div-portada {
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
 }
@@ -73,7 +73,7 @@ header ul li:hover {
               FIN SECCION INICIO
 ---------------------------------------------*/
 .banner {
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
 }
@@ -85,7 +85,7 @@ header ul li:hover {
 }
 
 .buscador {
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
   display: flex;
@@ -128,11 +128,52 @@ header ul li:hover {
   width: 50px;
 }
 
+.filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px 80px 10px 80px;
+  border-radius: 40px;
+  box-shadow: #222222 0px 5px 30px 0px;
+  background-color: #000000;
+  color: #33ffc4;
+}
+
+.sub-div-filtros {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.ordenar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px 80px 10px 80px;
+  border-radius: 40px;
+  box-shadow: #222222 0px 5px 30px 0px;
+  background-color: #000000;
+  color: #33ffc4;
+}
+
+.filtro-titulo h2 {
+  margin: 5px;
+  font-size: 16px;
+}
+
+.filtro-categorias select {
+  margin: 5px;
+  border: none;
+  padding: 5px;
+}
+
 /*-------------------------------------------
               SECCION PERSONAJES
 ---------------------------------------------*/
 .div-personajes {
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
   display: flex;
@@ -182,7 +223,7 @@ header ul li:hover {
 ---------------------------------------------*/
 .div-ubicaciones {
   background-color: #222222;
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
   display: flex;
@@ -232,7 +273,7 @@ header ul li:hover {
 ---------------------------------------------*/
 .div-episodios {
   background-color: #222222;
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
   display: flex;
@@ -282,7 +323,7 @@ header ul li:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
   background-color: #000000;
@@ -304,7 +345,7 @@ header ul li:hover {
 }
 
 footer {
-  margin: 50px 100px 50px 100px;
+  margin: 30px 80px 30px 80px;
   border-radius: 40px;
   box-shadow: #222222 0px 5px 30px 0px;
   display: flex;
@@ -327,6 +368,7 @@ footer {
 .div-personajes,
 .div-ubicaciones,
 .div-episodios,
+.filtros,
 .banner,
 .buscador,
 .paginacion,
@@ -406,6 +448,21 @@ footer {
 
   .logo-banner {
     display: none;
+  }
+
+  .filtros {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filtro-titulo h2 {
+    margin: 5px;
+    font-size: 10px;
+  }
+
+  .filtro-categorias select {
+    font-size: 10px;
+    width: 80px;
   }
 }
 

@@ -2,15 +2,14 @@ $color-fondo: #cccccc;
 $color-principal: #000000;
 $color-tipografia-principal: rgb(51, 255, 196);
 $color-fondo-div: rgb(34, 34, 34);
-$margen-principal: 50px 100px 50px 100px;
+$margen-principal: 30px 80px 30px 80px;
 $padding-header: 10px 30px 10px 30px;
 $box-shadow: rgb(34, 34, 34) 0px 5px 30px 0px;
 $negrita-subtitulos-tarjetas: 800;
 $notebook: 1050px;
-$tablet:830px;
-$ipad:750px;
-$phone:600px;
-
+$tablet: 830px;
+$ipad: 750px;
+$phone: 600px;
 
 @mixin no-mostrar {
   display: none;
@@ -73,6 +72,11 @@ $phone:600px;
   padding: 8px;
   color: $color-principal;
   background-color: $color-tipografia-principal;
+}
+
+@mixin margen-0 {
+  margin: 0;
+  border-radius: 0;
 }
 
 body {
@@ -159,7 +163,7 @@ header {
 }
 
 .buscador {
-  input{
+  input {
     background-color: #cccccc;
   }
 }
@@ -175,6 +179,49 @@ header {
 .logo-banner {
   width: 50px;
 }
+
+// FILTROS
+
+.filtros {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px 80px 10px 80px;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+  background-color: $color-principal;
+  color: $color-tipografia-principal;
+}
+.sub-div-filtros {
+  @include centrado;
+}
+
+.ordenar{
+  @include centrado;
+  margin: 10px 80px 10px 80px;
+  border-radius: 40px;
+  box-shadow: $box-shadow;
+  background-color: $color-principal;
+  color: $color-tipografia-principal;
+}
+
+
+
+.filtro-titulo {
+  h2 {
+    margin: 5px;
+    font-size: 16px;
+  }
+}
+
+.filtro-categorias {
+  select {
+    margin: 5px;
+    border: none;
+    padding: 5px;
+ }
+  }
+
 
 /*-------------------------------------------
               SECCION PERSONAJES
@@ -314,11 +361,6 @@ footer {
   flex-direction: column;
 }
 
-@mixin margen-0 {
-  margin: 0;
-  border-radius: 0;
-}
-
 @media (max-width: $notebook) {
   body {
     background-color: $color-principal;
@@ -328,6 +370,7 @@ footer {
   .div-personajes,
   .div-ubicaciones,
   .div-episodios,
+  .filtros,
   .banner,
   .buscador,
   .paginacion,
@@ -344,7 +387,6 @@ footer {
       border-radius: 0px;
     }
   }
-
 }
 
 @media (max-width: $tablet) {
@@ -403,5 +445,25 @@ footer {
 
   .logo-banner {
     @include no-mostrar;
+  }
+
+  .filtros{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+.filtro-titulo {
+  h2 {
+    margin: 5px;
+    font-size: 10px;
+  }
+}
+
+.filtro-categorias {
+  select {
+    font-size: 10px;
+    width: 80px;
+ }
   }
 }
