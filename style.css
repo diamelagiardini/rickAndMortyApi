@@ -399,21 +399,33 @@ footer {
     padding: 5px;
   }
 }
-@media (max-width: 750px) {
-  .personaje,
-.ubicacion,
-.espisodio {
+/*
+@media (max-width: $ipad) {
+  .personaje {
     max-width: 150px;
-    height: 300px;
     font-size: 12px;
+    img {
+      width: 160px;
+      height: 150px;
+    }
   }
-  .personaje img,
-.ubicacion img,
-.espisodio img {
-    width: 160px;
-    height: 150px;
+  .ubicacion {
+    max-width: 150px;
+    font-size: 12px;
+    img {
+      width: 160px;
+      height: 150px;
+    }
   }
-}
+  .espisodio {
+    max-width: 150px;
+    font-size: 12px;
+    img {
+      width: 160px;
+      height: 150px;
+    }
+  }
+}*/
 @media (max-width: 600px) {
   .div-navegacion ul {
     display: flex;

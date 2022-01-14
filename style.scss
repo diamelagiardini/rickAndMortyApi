@@ -196,7 +196,7 @@ header {
   @include centrado;
 }
 
-.ordenar{
+.ordenar {
   @include centrado;
   margin: 10px 80px 10px 80px;
   border-radius: 40px;
@@ -204,8 +204,6 @@ header {
   background-color: $color-principal;
   color: $color-tipografia-principal;
 }
-
-
 
 .filtro-titulo {
   h2 {
@@ -219,9 +217,8 @@ header {
     margin: 5px;
     border: none;
     padding: 5px;
- }
   }
-
+}
 
 /*-------------------------------------------
               SECCION PERSONAJES
@@ -399,20 +396,33 @@ footer {
     padding: 5px;
   }
 }
-
+/*
 @media (max-width: $ipad) {
-  .personaje,
-  .ubicacion,
-  .espisodio {
+  .personaje {
     max-width: 150px;
-    height: 300px;
     font-size: 12px;
     img {
       width: 160px;
       height: 150px;
     }
   }
-}
+  .ubicacion {
+    max-width: 150px;
+    font-size: 12px;
+    img {
+      width: 160px;
+      height: 150px;
+    }
+  }
+  .espisodio {
+    max-width: 150px;
+    font-size: 12px;
+    img {
+      width: 160px;
+      height: 150px;
+    }
+  }
+}*/
 
 @media (max-width: $phone) {
   .div-navegacion {
@@ -447,23 +457,22 @@ footer {
     @include no-mostrar;
   }
 
-  .filtros{
+  .filtros {
     display: flex;
     flex-direction: column;
   }
 
-  
-.filtro-titulo {
-  h2 {
-    margin: 5px;
-    font-size: 10px;
+  .filtro-titulo {
+    h2 {
+      margin: 5px;
+      font-size: 10px;
+    }
   }
-}
 
-.filtro-categorias {
-  select {
-    font-size: 10px;
-    width: 80px;
- }
+  .filtro-categorias {
+    select {
+      font-size: 10px;
+      width: 80px;
+    }
   }
 }
