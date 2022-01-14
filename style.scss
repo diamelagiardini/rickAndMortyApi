@@ -6,6 +6,12 @@ $margen-principal: 50px 100px 50px 100px;
 $padding-header: 10px 30px 10px 30px;
 $box-shadow: rgb(34, 34, 34) 0px 5px 30px 0px;
 $negrita-subtitulos-tarjetas: 800;
+$notebook: 1050px;
+$tablet:830px;
+$ipad:750px;
+$phone:600px;
+
+
 @mixin no-mostrar {
   display: none;
 }
@@ -313,7 +319,7 @@ footer {
   border-radius: 0;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: $notebook) {
   body {
     background-color: $color-principal;
   }
@@ -341,7 +347,7 @@ footer {
 
 }
 
-@media (max-width: 830px) {
+@media (max-width: $tablet) {
   header {
     @include centrado;
     flex-direction: column;
@@ -352,7 +358,7 @@ footer {
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: $ipad) {
   .personaje,
   .ubicacion,
   .espisodio {
@@ -366,7 +372,7 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: $phone) {
   .div-navegacion {
     ul {
       @include centrado;
