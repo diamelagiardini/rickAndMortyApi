@@ -49,21 +49,24 @@ const crearTarjetasPersonajes = (data) => {
   const html = data.reduce((acc, curr) => {
     return (
       acc +
-      `             <article class="personaje">
+      `             <article id="personaje${curr.id}" class="personaje">
    <img class="imagen-personaje" src=${curr.image}>
    <h2 class="nombre-personaje">${curr.name}</h2>
    <div class="genero">
        <p class="subtitulos-personaje">GENERO</p>
        <p>${curr.gender}</p>
    </div>
+   <hr>
    <div class="estado">
        <p class="subtitulos-personaje">ESTADO</p>
        <p>${curr.status}</p>
    </div>
+   <hr>
    <div class="origen">
        <p class="subtitulos-personaje">ORIGEN</p>
        <p>${curr.origin.name}</p>
    </div>
+   <hr>
 </article>
    `
     );
@@ -92,14 +95,17 @@ const crearTarjetasUbicaciones = (data) => {
        <p class="subtitulos-ubicacion">TIPO</p>
        <p>${curr.type}</p>
    </div>
+   <hr>
    <div class="dimension">
        <p class="subtitulos-ubicacion">DIMENSION</p>
        <p>${curr.dimension}</p>
    </div>
+   <hr>
    <div class="residentes">
        <p class="subtitulos-ubicacion">RESIDENTES</p>
        <p>${curr.residents.length}</p>
    </div>
+   <hr>
 </article>
    `
     );
@@ -130,14 +136,17 @@ const crearTarjetasEpisodios = (data) => {
        <p class="subtitulos-episodio">ID</p>
        <p>${curr.id}</p>
    </div>
+   <hr>
    <div class="air-date">
        <p class="subtitulos-episodio">AIR DATE</p>
        <p>${curr.air_date}</p>
    </div>
+   <hr>
    <div class="episode">
        <p class="subtitulos-episodio">EPISODE</p>
        <p>${curr.episode}</p>
    </div>
+   <hr>
 </article>
    `
     );
@@ -164,21 +173,24 @@ const crearTarjetasSegunPersonaje = (data) => {
   const html = data.reduce((acc, curr) => {
     return (
       acc +
-      `<article class="personaje">
+      `<article id="${curr.id}" class="personaje">
       <img class="imagen-personaje" src=${curr.image}>
       <h2 class="nombre-personaje">${curr.name}</h2>
       <div class="genero">
           <p class="subtitulos-personaje">GENERO</p>
           <p>${curr.gender}</p>
       </div>
+      <hr>
       <div class="estado">
           <p class="subtitulos-personaje">ESTADO</p>
           <p>${curr.status}</p>
       </div>
+      <hr>
       <div class="origen">
           <p class="subtitulos-personaje">ORIGEN</p>
           <p>${curr.origin.name}</p>
       </div>
+      <hr>
    </article>`
     );
   }, " ");
@@ -212,14 +224,17 @@ const crearTarjetasSegunUbicacion = (data) => {
        <p class="subtitulos-ubicacion">TIPO</p>
        <p>${curr.type}</p>
    </div>
+   <hr>
    <div class="dimension">
        <p class="subtitulos-ubicacion">DIMENSION</p>
        <p>${curr.dimension}</p>
    </div>
+   <hr>
    <div class="residentes">
        <p class="subtitulos-ubicacion">RESIDENTES</p>
        <p>${curr.residents.length}</p>
    </div>
+   <hr>
 </article>`
     );
   }, " ");
@@ -251,14 +266,17 @@ const crearTarjetasSegunEpisodio = (data) => {
        <p class="subtitulos-episodio">ID</p>
        <p>${curr.id}</p>
    </div>
+   <hr>
    <div class="air-date">
        <p class="subtitulos-episodio">AIR DATE</p>
        <p>${curr.air_date}</p>
    </div>
+   <hr>
    <div class="episode">
        <p class="subtitulos-episodio">EPISODE</p>
        <p>${curr.episode}</p>
    </div>
+   <hr>
 </article>`
     );
   }, " ");
@@ -384,4 +402,59 @@ botonBuscarEpisodio.onclick = () => {
   divEpisodios.classList.add("no-mostrar");
   divEpisodios.classList.remove("div-episodios");
   buscarInformacionSegunEpisodio();
+};
+
+// MODAL
+const contenedorModal = document.querySelector("#contenedor-modal");
+
+const crearModal = (data) => {
+  contenedorModal.classList.remove("no-mostrar");
+  const html = data.reduce((acc, curr) => {
+    return (
+      acc +
+      `
+           <div class="modal">
+               <div><i></i> icono</div>
+               <div>
+                   <h2>NOMBRE:</h2>
+                   <h2>ID: ${curr.id}</h2>
+               </div>
+               <div><img src="" alt="">Imagen</div>
+               <div>
+                   <h3>ESPECIE</h3>
+                   <p>${curr.species}</p>
+               </div>
+               <div>
+                   <h3>GENERO</h3>
+                   <p>${curr.gender}</p>
+               </div>
+               <div>
+                   <h3>ESTADO</h3>
+                   <p>${curr.status}</p>
+               </div>
+               <div>
+                   <h3>ORIGEN</h3>
+                   <p>${curr.origin.name}</p>
+               </div>
+           </div>
+      
+       `
+    );
+  }, " ");
+  contenedorModal.innerHTML = html;
+};
+
+const buscarInformacionPersonajesModal = () => {
+  fetch(`https://rickandmortyapi.com/api/character`)
+    .then((res) => res.json())
+    .then((data) => {
+      crearModal(data.results);
+    });
+};
+
+//const tarjetaPersonaje = document.querySelector(`#personaje${}`);
+
+tarjetaPersonaje.onclick = () => {
+  buscarInformacionPersonajesModal();
+  console.log("HOLA");
 };
