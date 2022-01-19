@@ -49,7 +49,7 @@ const crearTarjetasPersonajes = (data) => {
   const html = data.reduce((acc, curr) => {
     return (
       acc +
-      `             <article id="personaje${curr.id}" class="personaje">
+      `             <article class="personaje">
    <img class="imagen-personaje" src=${curr.image}>
    <h2 class="nombre-personaje">${curr.name}</h2>
    <div class="genero">
@@ -72,6 +72,14 @@ const crearTarjetasPersonajes = (data) => {
     );
   }, " ");
   divPersonajes.innerHTML = html;
+  let tarjetaPersonaje = document.querySelectorAll(".personaje");
+  console.log(tarjetaPersonaje);
+  for (let i = 0; i < tarjetaPersonaje.length; i++) {
+    tarjetaPersonaje[i].onclick = () => {
+      buscarInformacionPersonajesModal();
+      console.log("HOLA");
+    };
+  }
 };
 
 let paginaActual = 1;
@@ -173,7 +181,7 @@ const crearTarjetasSegunPersonaje = (data) => {
   const html = data.reduce((acc, curr) => {
     return (
       acc +
-      `<article id="${curr.id}" class="personaje">
+      `<article class="personaje">
       <img class="imagen-personaje" src=${curr.image}>
       <h2 class="nombre-personaje">${curr.name}</h2>
       <div class="genero">
@@ -405,6 +413,7 @@ botonBuscarEpisodio.onclick = () => {
 };
 
 // MODAL
+
 const contenedorModal = document.querySelector("#contenedor-modal");
 
 const crearModal = (data) => {
@@ -452,9 +461,11 @@ const buscarInformacionPersonajesModal = () => {
     });
 };
 
-//const tarjetaPersonaje = document.querySelector(`#personaje${}`);
 
-tarjetaPersonaje.onclick = () => {
-  buscarInformacionPersonajesModal();
-  console.log("HOLA");
-};
+
+/*for (let i = 0; i < tarjetaPersonaje.length; i++) {
+  tarjetaPersonaje[i].onclick = () => {
+    buscarInformacionPersonajesModal();
+    console.log("HOLA");
+  };
+}*/
