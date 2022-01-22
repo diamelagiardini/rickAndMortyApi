@@ -472,3 +472,8 @@ const buscarInformacionPersonajesModal = () => {
     });
 };
 
+
+// MALE: cosas que me gustaria que funcionen de una mejor manera pero no lo logre:
+// 1. Cuando el input del buscador "personajes", "ubicaciones", "episodios" queda vacio que vuelva a mostrar todas las tarjetas.
+//2. Llegue a maquetar la parte de filtros pero no llegue a hacerlo funcionar. En un momento senti que se me hacia imposible y segui con otra cosa: el modal al hacer click en tarjeta personajes.
+//3. Cuando hice este modal tuve muchos conflictos, uno de ellos fue que no me muestra la informacion que quiero traer desde la api. Otra cosa que note es que cuando busco un nombre en el buscador y luego hago click en una de las tarjetas del resultado de la busqueda, no me abre el modal.
