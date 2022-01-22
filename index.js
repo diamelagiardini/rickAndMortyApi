@@ -72,8 +72,9 @@ const crearTarjetasPersonajes = (data) => {
     );
   }, " ");
   divPersonajes.innerHTML = html;
-  let tarjetaPersonaje = document.querySelectorAll(".personaje");
+  const tarjetaPersonaje = document.querySelectorAll(".personaje");
   console.log(tarjetaPersonaje);
+
   for (let i = 0; i < tarjetaPersonaje.length; i++) {
     tarjetaPersonaje[i].onclick = () => {
       buscarInformacionPersonajesModal();
@@ -416,41 +417,51 @@ botonBuscarEpisodio.onclick = () => {
 
 const contenedorModal = document.querySelector("#contenedor-modal");
 
+// NO ME MUESTRA LOS VALORES
 const crearModal = (data) => {
   contenedorModal.classList.remove("no-mostrar");
-  const html = data.reduce((acc, curr) => {
-    return (
-      acc +
-      `
-           <div class="modal">
-               <div><i></i> icono</div>
-               <div>
-                   <h2>NOMBRE:</h2>
-                   <h2>ID: ${curr.id}</h2>
+  const html = `
+           <div id="modal" class="modal">
+               <div class="flex derecha"><i id="cerrar-modal" class="fas fa-times-circle"></i></div>
+               <div class="flex justify-content-betwen">
+                   <h2>NOMBRE: ${data.name}</h2>
+                   <h2>ID: ${data.id}</h2>
                </div>
-               <div><img src="" alt="">Imagen</div>
-               <div>
+               <hr>
+               <div class="centrado"><img src="" alt="">Imagen</div>
+               <hr>
+               <div class="flex justify-content-betwen">
                    <h3>ESPECIE</h3>
-                   <p>${curr.species}</p>
+                   <p>${data.species}</p>
                </div>
-               <div>
+               <hr>
+               <div class="flex justify-content-betwen">
                    <h3>GENERO</h3>
-                   <p>${curr.gender}</p>
+                   <p>${data.gender}</p>
                </div>
-               <div>
+               <hr>
+               <div class="flex justify-content-betwen">
                    <h3>ESTADO</h3>
-                   <p>${curr.status}</p>
+                   <p>${data.status}</p>
                </div>
-               <div>
+               <hr>
+               <div class="flex justify-content-betwen">
                    <h3>ORIGEN</h3>
-                   <p>${curr.origin.name}</p>
+                   <p>${data.origin}</p>
                </div>
+               <hr>
            </div>
       
-       `
-    );
-  }, " ");
+       `;
   contenedorModal.innerHTML = html;
+  const cerrarModal = document.querySelector("#cerrar-modal");
+  const modal = document.querySelector("#modal");
+
+  cerrarModal.onclick = () => {
+    contenedorModal.classList.toggle("no-mostrar");
+    modal.classList.add("no-mostrar");
+    console.log("cerrar-modal");
+  };
 };
 
 const buscarInformacionPersonajesModal = () => {
@@ -461,11 +472,3 @@ const buscarInformacionPersonajesModal = () => {
     });
 };
 
-
-
-/*for (let i = 0; i < tarjetaPersonaje.length; i++) {
-  tarjetaPersonaje[i].onclick = () => {
-    buscarInformacionPersonajesModal();
-    console.log("HOLA");
-  };
-}*/
