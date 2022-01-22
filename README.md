@@ -4,8 +4,6 @@ Este es un proyecto que corresponde al modulo 6: Asincronismo del programa de Ad
 
 Para eso utilice una API REST con datos reales, donde consulte a la misma pasándole distintos parámetros que me permitieron personalizar la búsqueda y mostrar los datos obtenidos como respuesta. 
 
-![https://www.cinemascomics.com/wp-content/uploads/2021/11/rick-y-morty-sexta-temporada-2022.jpg.webp]
-
 ## Deploy 
 
 Aca podes ver el proyecto:
