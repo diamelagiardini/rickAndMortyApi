@@ -73,11 +73,13 @@ const crearTarjetasPersonajes = (data) => {
   }, " ");
   divPersonajes.innerHTML = html;
   const tarjetaPersonaje = document.querySelectorAll(".personaje");
+  // no dejes console log en una entrega
   console.log(tarjetaPersonaje);
 
   for (let i = 0; i < tarjetaPersonaje.length; i++) {
     tarjetaPersonaje[i].onclick = () => {
       buscarInformacionPersonajesModal();
+      // no dejes console log en una entrega
       console.log("HOLA");
     };
   }
@@ -206,6 +208,7 @@ const crearTarjetasSegunPersonaje = (data) => {
   divSegunPersonaje.innerHTML = html;
 };
 
+// pone todas las variables del dom arriba de todo
 const inputPersonaje = document.querySelector("#input-personaje");
 
 const buscarInformacionSegunPersonaje = () => {
@@ -474,6 +477,36 @@ const buscarInformacionPersonajesModal = () => {
 
 
 // MALE: cosas que me gustaria que funcionen de una mejor manera pero no lo logre:
+
+// Voy respondiendo una por una. 
+
 // 1. Cuando el input del buscador "personajes", "ubicaciones", "episodios" queda vacio que vuelva a mostrar todas las tarjetas.
+
+// Eso ya ocurre, al menos en mi local. Asi funciona la api: cuando envias name= vacio, se retornan todos los personajes. 
+
 //2. Llegue a maquetar la parte de filtros pero no llegue a hacerlo funcionar. En un momento senti que se me hacia imposible y segui con otra cosa: el modal al hacer click en tarjeta personajes.
-//3. Cuando hice este modal tuve muchos conflictos, uno de ellos fue que no me muestra la informacion que quiero traer desde la api. Otra cosa que note es que cuando busco un nombre en el buscador y luego hago click en una de las tarjetas del resultado de la busqueda, no me abre el modal.
+
+// Es muy largo para dejarte el codigo, pero tratá de seguir estos pasos. 
+// - Identificá cada uno de los elementos del formulario. En la funcion buscarInformacionSegunPersonaje, obtené el value de cada uno. 
+// - Agregá esos values al fetch. Asi: 
+// `https://rickandmortyapi.com/api/character/?name=${valorInputPersonaje}&status=${valorInputStatus}&gender=${valueStatusGender}`
+// Si quedan vacios no hay problema, la API te va a traer todos
+
+//3. Cuando hice este modal tuve muchos conflictos, uno de ellos fue que no me muestra la informacion que quiero traer desde la api.
+//  Otra cosa que note es que cuando busco un nombre en el buscador y luego hago click en una de las tarjetas del resultado de la busqueda, 
+// no me abre el modal.
+
+// Tu funcion esta mal encarada. Cuando hacemos click sobre una tarjeta se ejecuta buscarInformacionPersonajesModal, pero esa funcion 
+// hace un fetch a la url que trae a todos los personajes, no al que vos queres. No podes rellenar un modal con la info de todos los personajes. 
+// Tu funcion necesita saber exactamente cual es el elemento que debe buscar. Por ejemplo, si hago click en la tarjeta de Rick, que tiene 
+// el id 1, quiero hacer un fetch a "https://rickandmortyapi.com/api/character/1". Si hago clic en Morty, que tiene el id 2, quiero hacer un fetch a 
+// "https://rickandmortyapi.com/api/character/2". 
+// Para eso cada tarjeta de personaje debe tener su id: cuando hagas el html, agregalo asi:
+// `<article class="personaje" id=${curr.id}>`
+// Al hacer click en la tarjeta, le pasas ese id a la funcion, asi:
+// buscarInformacionPersonajesModal(tarjetaPersonaje[i].id);
+// Y luego en el modal recibis el id para usarlo en el fetch:
+
+// const buscarInformacionPersonajesModal = (id) => {
+//   fetch(`https://rickandmortyapi.com/api/character/${id}`)
+//   Ojo que no te va a venir data.results, te va a venir solo data, asi que vas a tener que modificar un poco mas la funcion. 
