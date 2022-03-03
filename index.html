@@ -10,12 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- debe estar en la carpeta principal, no en img, y el link asi:
+    <link rel="icon" type="image/ico" href="favicon.ico"> -->
     <link rel="icon" href="./img/favicon.ico">
     <script src="https://kit.fontawesome.com/22bd207fea.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
+        <!-- el alt debe ser una oracion, no pongas guiones, el lector de pantalla no los entiende -->
         <div id="ir-inicio"><img src="https://admiring-keller-046d5a.netlify.app/static/media/logo.9baa90dc.png"
                 alt="logo-rick-and-morty"></div>
         <div class="div-navegacion">
@@ -31,6 +34,9 @@
                      SECCION INICIO
     --------------------------------------------->
     <section id="seccion-inicio">
+        <!-- debe ser img/portada o ./img/portada
+        asi como esta, no la veo en mi local 
+    corregi los guiones del alt-->
         <div class="div-portada"> <img src="/img/portada.png" alt="portada-rick-and-morty"> </div>
     </section>
 
@@ -44,6 +50,7 @@
     --------------------------------------------->
 
     <section id="seccion-fija" class="no-mostrar">
+        <!-- no dejes nunca un alt vacio! -->
         <div id="banner" class="banner"><img src="/img/banner.png" alt=""></div>
     </section>
 
@@ -74,6 +81,7 @@
                     <h2>FILTROS</h2>
                 </div>
                 <div id="filtro-personajes-categorias" class="filtro-categorias">
+                    <!-- si los elementos de formulario no tienen label, deben tener aria-label -->
                     <select name="genero" id="filtro-genero">
                         <option value="Todos">Genero</option>
                         <option value="Male">Masculino</option>
@@ -111,6 +119,7 @@
         </div>
 
         <div class="paginacion">
+            <!-- si un boton no tiene texto, debe tener aria-label -->
             <button class="paginacion-boton" id="pagina-anterior-personajes"><i
                     class="fas fa-chevron-circle-left"></i></button>
             <button class="paginacion-boton" id="pagina-siguiente-personajes"><i
@@ -131,6 +140,7 @@
             <p>INICIAR BUSQUEDA</p>
             <input id="input-ubicacion" type="text" placeholder="Buscar ubicacion">
             <button id="boton-buscar-ubicacion" class="buscador-boton">BUSCAR</button>
+            <!-- ./img/ o img/ -->
             <img class="logo-banner" src="/img/logo-buscador.png" alt="">
         </div>
 
